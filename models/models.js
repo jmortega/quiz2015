@@ -18,7 +18,11 @@ console.log("DB_name "+DB_name);
 console.log("storage "+storage);
 // Cargar Modelo ORM
 var Sequelize = require('sequelize');
-				
+
+var sequelize = new Sequelize(null, null, null, 
+                       {dialect: "sqlite", storage: "quiz.sqlite"}
+                    );
+					
 // Usar BBDD SQLite o Postgres
 var sequelize = new Sequelize(DB_name, user, pwd, 
   { dialect:  protocol,
@@ -41,8 +45,8 @@ sequelize.sync().success(function() {
   Quiz.count().success(function (count){
     if(count === 0) {   // la tabla se inicializa solo si está vacía
       Quiz.bulkCreate( 
-        [ {pregunta: 'Capital de Italia',   respuesta: 'Roma'},
-          {pregunta: 'Capital de Portugal', respuesta: 'Lisboa'}
+        [ {pregunta: 'Capital de Italia',   respuesta: 'Roma', tematica:'Ciencia'},
+          {pregunta: 'Capital de Portugal', respuesta: 'Lisboa',tematica:'Ciencia'}
         ]
       ).then(function(){console.log('Base de datos inicializada')});
     };
