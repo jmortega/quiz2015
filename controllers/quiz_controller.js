@@ -97,7 +97,7 @@ exports.index = function(req, res) {
 
   //Obtener parámetro de busqueda
   var search = req.query.search || "";
-
+  
   //filtro para búsqueda mediante expresion regular
   search = "%" + search.replace(/\s/gi, "%") + "%";
 
@@ -106,7 +106,7 @@ exports.index = function(req, res) {
   };
   
   models.Quiz.findAll(_paramSearch).then(function(quizes) {
-    res.render('quizes/index', { quizes: quizes});
+    res.render('quizes/index', { quizes: quizes,tematicasAux:tematicas,tematicaAux:search});
    }).catch(function(error) { next(error);})
 };
 
@@ -114,14 +114,14 @@ exports.index = function(req, res) {
 exports.quizesTematica = function(req, res) {
 
   //Obtener parámetro de busqueda tematica
-  var searchTematica = req.query.searchTematica || "";
-
+  var searchTematica = req.query.tematica || "";
+  
   var _paramSearchTematica = {
     where: ["tematica like ?", searchTematica]
   };
   
   models.Quiz.findAll(_paramSearchTematica).then(function(quizes) {
-    res.render('quizes/index', { quizes: quizes});
+    res.render('quizes/index', { quizes: quizes,tematicasAux:tematicas,tematicaAux:searchTematica});
    }).catch(function(error) { next(error);})
 };
 
