@@ -1,7 +1,12 @@
-body             { background: #333; }
+body { background: #333; }
+#page-wrap:after{ content: "Smartphone Layout"; }
 
-#page-wrap:after { content: "Smartphone Layout"; }
-
-h2 span, section h3 { display: none; }
-body                { font-size: xx-large; }
-footer, input       { font-size: large; } 
+h2 span, section h3 { display: none;}
+body { font-size: xx-large; }
+nav#n1{ text-align: center;}
+section.main table{ width: 99%; display: flex; }
+section.main table td{ display: flex; }
+ul.creditos{ text-align: center; }
+ul.creditos > li{ margin-bottom: 2px;}
+span#aislado{display: none;}
+footer, input, button { font-size: large; }

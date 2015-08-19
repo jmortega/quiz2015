@@ -1,0 +1,22 @@
+<p>Añadir comentario:</p>
+
+<form method="post" action="/quizes/<%=quizid%>/comments" id="formcomment" >
+	<input type="text" id="comment" name="comment[texto]" value="" />
+	<button type="submit" id="enviar">Enviar</button>
+	
+	<br/>
+	<hr/>
+	<br/>
+	
+	<% if( errors )
+	{ %>
+		<div class="listerrors">
+
+		<% for(index in errors){ %>
+				<font color="red"><%= errors[index] %></font>
+		<% } %>
+		</div>
+	<% } %>
+	
+</form>
+

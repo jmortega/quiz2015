@@ -1,0 +1,30 @@
+<h2>Login</h2>
+
+<%if (timeout){%><font color="#FF0000"> Time out de session. Debe logearse de nuevo. <br></font><%}%>
+
+<form method='post' action='/login'>
+	<div class="field">
+		<label for="login">Login:</label><br/>
+		<input type="text" id="login" name="login" size="30" />
+	</div>
+
+	<div class="field">
+		<label for="password">Password:</label><br/>
+		<input type="password" id="password" name="password" size="30" />
+	</div>
+
+	<div class="actions">
+		<input name="commit" type="submit" value="Login" />
+	</div>
+	
+	<div>
+	<% if (errors.length) { %>
+      <span>
+        <% for (var i in errors) { %>
+           <span><font color="red"> <%= errors[i].message %> </font></span><br/>
+        <% } %>
+      </span>
+    <% } %>
+	</div>
+			
+</form>

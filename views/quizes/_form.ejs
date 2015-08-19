@@ -1,18 +1,29 @@
 <br/>
-Tematica: <%= quiz.tematica %><br/><hr>
-<label for="preg" class="rem">Pregunta:</label>
-<input type="text" id="preg" name="quiz[pregunta]" value="<%= quiz.pregunta %>"/> <p>
-<label for="resp" class="rem">Respuesta:</label>
-<input type="text" id="resp" name="quiz[respuesta]" value="<%= quiz.respuesta %>"/> <p>
-<label for="tematica" class="rem">Tematica:</label>
-<select id="tematica" name="quiz[tematica]">
-  <% 
-    for (var i = 0; i < tematicas.length; i++) {
-      var selectedOK = ((quiz.tematica === tematicas[i]) ? "selected" : "");
-  %>
-    <option value="<%=tematicas[i]%>" <%=selectedOK%>><%=tematicas[i]%></option>
-  <% } %>
-</select>
+	<ul id="formadd">
+		<li>
+			Tematica: <%= quiz.tematica %><br/><hr>
+		</li>
+		<li>
+			<label for="preg" class="rem">Pregunta:</label>
+			<input type="text" id="preg" name="quiz[pregunta]" value="<%= quiz.pregunta %>"/> <p>
+		</li>
+		<li>
+			<label for="resp" class="rem">Respuesta:</label>
+			<input type="text" id="resp" name="quiz[respuesta]" value="<%= quiz.respuesta %>"/> <p>
+		</li>
+		<li>
+			<label for="tematica" class="rem">Tematica:</label>
+			<select id="tematica" name="quiz[tematica]">
+			<% 
+				for (var i = 0; i < tematicas.length; i++) {
+				var selectedOK = ((quiz.tematica === tematicas[i]) ? "selected" : "");
+			%>
+			<option value="<%=tematicas[i]%>" <%=selectedOK%>><%=tematicas[i]%></option>
+			<% } %>
+			</select>
+		</li>
 <br/><br/>
-<a href="/quizes"><button type="button">Cancelar</button></a>
-<input type="submit" value="Salvar">
+<li class='botones'> <a href="/quizes"><button type="button">Cancelar</button></a></li>
+<li class='botones'> <input type="submit" value="Salvar"></li>
+
+</ul>

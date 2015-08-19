@@ -1,24 +1,61 @@
+*{ margin: 0; padding: 0;}
+a{ text-decoration: none; }
+a:hover{ text-decoration: underline; }
+p{ margin: 0.5em 0; }
 
-*        { margin: 0; padding: 0; }
+nav span{ margin: 0 10px 0 0;}
 
-body {
-  padding: 10px;
-  font: 16px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
+#ErrorMsgs{ color: #fff; font-size: smaler; margin-bottom: 0.75em; background: #EA0C00; padding: 4px 0; font-weight: bold;}
+#ErrorMsgs span{ font-weight: normal;}
 
-a {
-  color: #00B7FF;
-}
+body {  font: 20px Georgia, serif; }
+#page-wrap { margin: 2% auto; color: white; }
+#page-wrap > .main, #page-wrapper > .main { border: 2px solid #90EE90; border-bottom: none; padding: 1%; }
+#page-wrapper{ overflow: hidden; margin: 2px 0;}
+#page-wrapper > nav#n1{ margin-bottom: -300px; padding-bottom: 300px; }
 
-#page-wrap           { margin: 2% auto; color: white; }
-#page-wrap > .main   { border: 1px solid #999; padding: 1%; 
-	                   margin-bottom: 1px; color: black;}
+section > div { padding: 20px; }
+section.main{ color: black;}
+section.main table caption{ font-weight: bold; background: #90EE90; padding: 4px 0px; color: #fff; margin-bottom: 1em; border: 2px solid #333; }
+section.main table td{text-align: left;}
+section.main table td button{background: #90EE90; color: #fff; margin-left: 1em; }
+section.main .busqueda h3{ margin-bottom: 4px; }
+section.main .busqueda input#search, input#respreg{ border: 1px solid #7CFC00; color: #7CFC00;}
+section.main .busqueda input#enviar{ border: none; background: #778899; color: #fff;}
+section.main button, input{font-weight: bold; border: none; padding: 4px; font-family: Helvetica;}
+section.main form#formanswer{ margin-bottom: 2%; }
+section.main form ul#formadd{list-style: none; display: inline-block;}
+section.main form ul#formadd li{ float: left; margin: 0.5em 0.2em; }
+section.main form ul#formadd li select, section.main form ul#formadd li option{background: #9ACD32; color: #000; border: 1px solid #9ACD32;}
+section.main form ul#formadd li option{border-top: none; border-bottom: none;}
+section.main form#formcomment{margin: 0.5em 0;}
+section.main form#formcomment input{ border: 1px solid #F0FFF0;}
+button#create, button#cancelar, input#guardar, input#enviar, button#enviar, button#ncomment, .actions input, button#publicar{ color: #9ACD32;}
+button#create{ background: #343C45; }
+input#guardar, input#enviar, button#enviar, .actions input, button#publicar{ background: #0F6092; }
+button#cancelar{ background: #9ACD32;}
+button#borrar{ background: #F08080;}
+button#ncomment{ background: #778899;}
+label.rem{ font-weight: bold; color: #0F171F;}
+input#preg, input#resp{ border-bottom: 1px solid #F0FFF0; background: none; margin-bottom: 1%;}
+button:hover, input#enviar:hover, button#enviar:hover, input#guardar:hover, button#ncomment:hover, .actions input:hover{ cursor: pointer;}
 
-section > div        { padding: 20px; }
-header, nav, section { background: #eee; text-align: center;}
-footer               { background: #eee; text-align: center;}
-nav span             { margin: 0px 10px 0px 0px;} 
+.listcomment{ text-align: left; }
+.listcomment ul{ list-style: inside numeric; }
+.listcomment li{ margin-bottom: 0.3em;}
 
-table {
-  width: 100%;
-}
+nav#n1{ text-align: left;}
+header, nav.main, section { background: #eee; text-align: center; }
+header.main{background: #778899; color: #fff;}
+footer { background: #778899; color: #778899; text-align: center; }
+nav span { margin: 0px 10px 0px 0px;}
+
+.right{ float: right;}
+.right a{color: #fff; font-weight: bold; margin-left: 0.6em; }
+.field{ margin: 0.5em 0;}
+.field input{ border: 1px solid #778899; margin-top: 0.2em;}
+
+ul.autor{ list-style: none; text-align: left; }
+ul.autor > li{ margin-bottom: 4px;}
+
+footer nav a{ color: #fff;}

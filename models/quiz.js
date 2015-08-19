@@ -12,7 +12,8 @@ module.exports = function(sequelize, DataTypes) {
         validate: { notEmpty: {msg: "-> Falta Respuesta"}}
       },
 	  tematica: {
-        type: DataTypes.STRING,
+        type: DataTypes.ENUM,
+		values: ['Otro', 'Humanidades', 'Ocio', 'Ciencia', 'Tecnología'],
         validate: { notEmpty: {msg: "-> Falta Tematica"}}
       }
     }

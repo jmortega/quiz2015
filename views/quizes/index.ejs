@@ -1,9 +1,11 @@
+ <div class='busqueda' id="formadd">
+ 
  <form method="get" action="/quizes">
   <input type="text" id="search" name="search" placeholder="Buscar	" />
   <input type="submit" value="Buscar" />
 </form>
 
- <form method="get" action="/quizesTematica">
+ <form id="formadd" method="get" action="/quizesTematica">
   <select id="searchTematica" name="searchTematica">
   <option value="Otro">Otro</option>
   <option value="Humanidades">Humanidades</option>
@@ -14,6 +16,8 @@
   <input type="submit" value="Buscar por tematica" />
 </form>
 
+</div>
+
  <br/>
  <hr/>
  
@@ -21,20 +25,42 @@
      No hay resultados que coincidan con el criterio de búsqueda
   <% } %>
  
- <table>
- <% var i; for (i=0; i < quizes.length; i++) { %>        
+<table width="70%" style="margin: 0 auto;">
+ <tr>
+    <th align="left">Temática</th>
+    <th align="left">Pregunta</th>
+	<% if( session.user ){ %>
+		<th align="left" colspan="2">Acciones</th>
+	<% } %>
+  </tr>
+  
+  <hr/>
+  
+ <% var i; for (i=0; i < quizes.length; i++) { %>  
      <tr>
 		<td><a href="quizes/<%= quizes[i].id %>"><%= quizes[i].tematica %></a></td>
+
 		<td><a href="quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %></a></td>
-		<td><a href="quizes/<%= quizes[i].id %>/edit"><button type="button">EdiTaR</button></a></td>
-		<td><form method="post" action="quizes/<%= quizes[i].id %>?_method=delete">
-			<button type="submit" onclick="return confirm('Borrar:<%=quizes[i].pregunta%>');">BoRrAr</button>
-		</td>
+		<% if( session.user ){ %>
+			<td align="center">
+				<a href="quizes/<%= quizes[i].id %>/edit"><button type="button">EdiTaR</button></a>
+			</td>
+			<td align="center">
+				<form method="post" action="quizes/<%= quizes[i].id %>?_method=delete">
+				<button id="borrar" type="submit" onclick="return confirm('Borrar:<%=quizes[i].pregunta%>');">BoRrAr</button>
+			</td>
+		<% } %>
 	 </tr>
  <% } %>
 
  </table>
  </p>
- <a href="quizes/new"><button type="button">Crear pregunta</button></a>
+ 
+ <p>
+<% if( session.user ){ %>
+	<a href="/quizes/new"><button type="button" id="create">Crear pregunta</button></a>
+<% } %>
+</p>
+
  
  
