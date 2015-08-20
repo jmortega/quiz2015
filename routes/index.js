@@ -25,7 +25,7 @@ router.get('/quizes/answer', quizController.answer);
 
 // Definición de rutas de /quizes
 router.get('/quizes',                      quizController.index);
-router.get('/quizesTematica',              quizController.quizesTematica);
+router.get('/quiztematica',                quizController.quiztematica);
 router.get('/quizes/:quizId(\\d+)',        quizController.show);
 router.get('/quizes/:quizId(\\d+)/answer', quizController.answer);
 

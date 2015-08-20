@@ -5,11 +5,11 @@
   <input type="submit" value="Buscar" />
 </form>
 
- <form method="get" action="/quizesTematica">
+ <form method="get" action="/quiztematica">
 
  <input type="text" id="tematica" name="tematica" placeholder="Buscar por temática" />
  
- <select id="tematica2" name="tematica2" onchange="document.getElementById('tematica').value=this.value">
+ <select onchange="document.getElementById('tematica').value=this.value">
  <% 
 				for (var i = 0; i < tematicasAux.length; i++) {
 				var selectedOK = ((tematicaAux === tematicasAux[i]) ? "selected" : "");

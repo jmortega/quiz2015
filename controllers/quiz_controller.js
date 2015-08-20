@@ -110,14 +110,14 @@ exports.index = function(req, res) {
    }).catch(function(error) { next(error);})
 };
 
-// GET /quizesTematica
-exports.quizesTematica = function(req, res) {
+// GET /quiztematica
+exports.quiztematica = function(req, res) {
 
   //Obtener parámetro de busqueda tematica
   var searchTematica = req.query.tematica || "";
   
   var _paramSearchTematica = {
-    where: ["tematica like ?", searchTematica]
+    where: ["tematica = ?", searchTematica]
   };
   
   models.Quiz.findAll(_paramSearchTematica).then(function(quizes) {
