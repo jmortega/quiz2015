@@ -1,21 +1,22 @@
  <div class='busqueda' id="formadd">
  
  <form method="get" action="/quizes">
-  <input type="text" id="search" name="search" placeholder="Buscar	" />
+  <input type="text" id="search" name="search" placeholder="Buscar" />
   <input type="submit" value="Buscar" />
 </form>
 
  <form method="get" action="/quizesTematica">
 
-<label for="tematica" class="rem">Tematica:</label>
-			<select id="tematica" name="tematica">
-			<% 
+ <input type="text" id="tematica" name="tematica" placeholder="Buscar por temática" />
+ 
+ <select id="tematica2" name="tematica2" onchange="document.getElementById('tematica').value=this.value">
+ <% 
 				for (var i = 0; i < tematicasAux.length; i++) {
 				var selectedOK = ((tematicaAux === tematicasAux[i]) ? "selected" : "");
-			%>
-			<option value="<%=tematicasAux[i]%>" <%=selectedOK%>><%=tematicasAux[i]%></option>
-			<% } %>
-			</select>
+	%>
+ <option value="<%=tematicasAux[i]%>" <%=selectedOK%>><%=tematicasAux[i]%></option>
+ <% } %>
+ </select>
 			
   <input type="submit" value="Buscar por tematica" />
 </form>
