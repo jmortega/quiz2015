@@ -40,7 +40,7 @@ exports.numberComments = function(req,res,next)
 // 3 - Número medio de comentarios por pregunta
 exports.avgCommentsPerQuestion = function(req,res,next)
 {
-	avgCommentsPerQuestion = (numberComments/numberQuestions).toFixed(0);
+	avgCommentsPerQuestion = (numberComments/numberQuestions).toFixed(2);
 	next();
 }
 
