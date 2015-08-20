@@ -25,7 +25,7 @@ exports.numberQuestions = function(req,res,next)
 // 2 - Número total de comentarios
 exports.numberComments = function(req,res,next)
 {
-	models.Comment.findAll({where: ["publicado = " + 1]})
+	models.Comment.findAll({where: ["publicado = 1"]})
 	.then(function(numberCommentsDB){
 		numberComments = numberCommentsDB.length;
 	})
@@ -48,7 +48,7 @@ exports.avgCommentsPerQuestion = function(req,res,next)
 exports.numberQuestionsWithComments = function(req,res,next)
 {
 	numberQuestionsWithComments=0;
-	models.Comment.findAll({where: ["publicado = " + 1]})
+	models.Comment.findAll({where: ["publicado = 1"]})
 	.then(function(numberQuestionsWithCommentsDB) {
 		for(i = 0; i < numberQuestionsWithCommentsDB.length; i++){
 			for(j = i; j < numberQuestionsWithCommentsDB.length; j++){
