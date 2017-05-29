@@ -21,7 +21,7 @@
     "express-partials": "~0.3.0",
     "express-session": "~1.9.0",
     "method-override": "~2.3.1",
-    "morgan": "~1.5.3",
+    "morgan": "~1.8.2",
     "pg": "~4.1.1",
     "pg-hstore": "~2.3.2",
     "sequelize": "~1.7.0",
